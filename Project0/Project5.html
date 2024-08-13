@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Project</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1>Start should change the backgroung color every second</h1>
+    <button id ="start">Start</button>
+    <button id ="stop">Stop</button>
+
+</body>
+<script>
+    // const change_me =setTimeout(() => {
+    //     console.log("vishal")
+    //     document.querySelector('h1').innerHTML="Best javascript series"
+        
+    // }, 2000);
+
+    // document.querySelector('#stop').addEventListener('click',()=>{
+    //     console.log("stop")
+    //     clearTimeOut(change_me);
+    // })
+
+    // let interval;
+    
+    // document.querySelector('#start').addEventListener('click',()=>{
+    //     interval = setInterval(()=>{
+    //     console.log("hitesh",Date.now())
+
+    // },1000)
+
+    // })
+
+    // document.querySelector('#stop').addEventListener('click',()=>{
+    //     clearInterval(interval)
+    // })
+
+    // generate a random color
+    const randomcolor = ()=>{
+        const hex = "123456789ABCDEF"
+        let color = '#'
+        for( i =0 ; i< 6 ; i++){
+            const index = Math.floor(Math.random() *15 )
+            color = color+hex[index]
+        }
+        document.querySelector('body').style.backgroundColor = color
+    }
+
+    let interval;
+    
+    document.querySelector('#start').addEventListener('click',()=>{
+        if(!interval){
+            interval = setInterval(randomcolor,1000)
+
+        }
+    }
+    )
+
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearInterval(interval)
+        interval =null
+    })
+
+
+
+
+
+</script>
+</html>

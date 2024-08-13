@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color changer</title>
+</head>
+<style>
+    .color{
+        height: 100px;
+        width: 100px;
+        border : 2px solid white
+    }
+    #grey{
+        background-color: grey;
+    }
+    #green{
+        background-color: green;
+    }
+    #red{
+        background-color: red;
+    }
+    #blue{
+        background-color: blue;
+    }
+    #orange{
+        background-color: orange;
+    }
+</style>
+<body style="background-color: #212121; color: white; display: flex; flex-direction: column;align-items: center; gap : 48px">
+    <h2>Color Changer</h2>
+    <div class="container" style="display: flex; gap: 20px">
+        <div id = "grey" class="color"></div>
+        <div id = "green" class="color"></div>
+        <div id = "red" class="color"></div>
+        <div id = "blue" class="color"></div>
+        <div id = "orange" class="color"></div>
+    </div>
+</body>
+    <script>
+        const color = document.querySelectorAll('.color')
+        const body = document.querySelector('body')
+        color.forEach((btn)=>{
+            btn.addEventListener('click',function(e){
+                const selected_color = e.target.id
+                if(selected_color ==='grey'){
+                    body.style.backgroundColor = selected_color
+                }
+                if(selected_color ==='green'){
+                    body.style.backgroundColor = selected_color
+                }
+                if(selected_color ==='red'){
+                    body.style.backgroundColor = selected_color
+                }if(selected_color ==='blue'){
+                    body.style.backgroundColor = selected_color
+                }
+                if(selected_color ==='orange'){
+                    body.style.backgroundColor = selected_color
+                }
+               
+            
+            })
+
+        })
+        console.log(color)
+    </script>
+</html>

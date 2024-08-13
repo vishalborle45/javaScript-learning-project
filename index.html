@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+</body>
+<script>
+    const reqURL = 'https://api.github.com/users/hiteshchaudhary'
+    const xreq = new XMLHttpRequest()
+    xreq.open('GET',reqURL)
+
+    xreq.onreadystatechange = function(){
+        // console.log(xreq.readyState)
+        if(xreq.readyState===4){
+        //   console.log(this.responseText)
+        const obj = JSON.parse(this.responseText)
+        console.log(obj.followers)
+        const newEle = document.createElement('div')
+        newEle.innerHTML = `<img src = ${obj.avatar_url}><div>${obj.followers}</div>`
+        document.querySelector('body').appendChild(newEle)
+        }
+
+    }
+    xreq.send()
+</script>
+</html>
